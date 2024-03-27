@@ -18,24 +18,15 @@ public class MyMapMain {
         myMap.print();
 
         System.out.println("Natters value: " + myMap.get("Natters"));
+
         myMap.put("Natters", 14);
         System.out.println("Natters value: " + myMap.get("Natters") + " (after put() update)");
 
         System.out.println("To remove Mau: " + myMap.remove("Mau"));
         myMap.print();
 
-        System.out.print("Sergz value (non-existent): ");
-        try{
-            System.out.println(myMap.get("Sergz"));
-        }catch(NullPointerException e){
-            System.out.println("null");
-        }
+        System.out.println("Sergz value (non-existent): " + myMap.get("Sergz"));
 
-        System.out.print("To remove Chase (non-existent): ");
-        try{
-            System.out.println(myMap.remove("Chase"));
-        }catch(NullPointerException e){
-            System.out.println("null");
-        }
+        System.out.println("To remove Chase (non-existent): " + myMap.remove("Chase"));
     }
 }
