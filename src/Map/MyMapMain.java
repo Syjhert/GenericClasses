@@ -20,7 +20,7 @@ public class MyMapMain {
         System.out.println("Natters value: " + myMap.get("Natters"));
 
         myMap.put("Natters", 14);
-        System.out.println("Natters value: " + myMap.get("Natters") + " (after put() update)");
+        System.out.println("Natters value: " + myMap.get("Natters") + " (after put update)");
 
         System.out.println("To remove Mau: " + myMap.remove("Mau"));
         myMap.print();
