@@ -9,50 +9,44 @@ public class Arithmetic<X extends Number, Y extends Number> {
     }
     public Number add(){
         Number sum = num1.doubleValue() + num2.doubleValue();
-        if(sum.doubleValue() % 1 == 0){
-            return sum.longValue();
-        }else return sum.doubleValue();
+        return longify(sum);        //helper method
     }
     public Number subtract(){
-        Number sum = num1.doubleValue() - num2.doubleValue();
-        if(sum.doubleValue() % 1 == 0){
-            return sum.longValue();
-        }else return sum.doubleValue();
+        Number difference = num1.doubleValue() - num2.doubleValue();
+        return longify(difference);
     }
     public Number multiply(){
-        Number sum = num1.doubleValue() * num2.doubleValue();
-        if(sum.doubleValue() % 1 == 0){
-            return sum.longValue();
-        }else return sum.doubleValue();
+        Number product = num1.doubleValue() * num2.doubleValue();
+        return longify(product);
     }
 
     public Number divide(){
-        Number sum = 0.0;
+        Number quotient = 0.0;
         try{
-            sum = num1.doubleValue() / num2.doubleValue();
+            quotient = num1.doubleValue() / num2.doubleValue();
         }catch(IllegalArgumentException e){
             System.out.println("Cannot divide " + num1.doubleValue() + "by zero");
         }
-        if(sum.doubleValue() % 1 == 0){
-            return sum.longValue();
-        }else return sum.doubleValue();
+        return longify(quotient);
     }
 
     public Number getMin(){
         Number min;
         if(num1.longValue() < num2.longValue()) min = num1;
         else min = num2;
-        if(min.doubleValue() % 1 == 0){
-            return min.longValue();
-        }else return min.doubleValue();
+        return longify(min);
     }
 
     public Number getMax(){
         Number max;
         if(num1.longValue() > num2.longValue()) max = num1;
         else max = num2;
-        if(max.doubleValue() % 1 == 0){
-            return max.longValue();
-        }else return max.doubleValue();
+        return longify(max);
+    }
+
+    private Number longify(Number num){ //if has no decimal point, make into long
+        if(num.doubleValue() % 1 == 0){
+            return num.longValue();
+        }else return num.doubleValue();
     }
 }
