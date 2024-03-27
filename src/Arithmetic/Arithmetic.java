@@ -32,14 +32,14 @@ public class Arithmetic<X extends Number, Y extends Number> {
 
     public Number getMin(){
         Number min;
-        if(num1.longValue() < num2.longValue()) min = num1;
+        if(num1.doubleValue() < num2.doubleValue()) min = num1;
         else min = num2;
         return longify(min);
     }
 
     public Number getMax(){
         Number max;
-        if(num1.longValue() > num2.longValue()) max = num1;
+        if(num1.doubleValue() > num2.doubleValue()) max = num1;
         else max = num2;
         return longify(max);
     }
